@@ -1,0 +1,4 @@
+src/app/assets/stylesheets/variables.scss
+src/app/assets/stylesheets/base.scss
+/tailwind.config.ts
+.next/*

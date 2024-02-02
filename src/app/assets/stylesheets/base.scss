@@ -1,0 +1,196 @@
+@import 'tailwindcss/base';
+
+@layer base {
+  body {
+    @apply font-poppins text-textPrimary min-h-screen bg-white text-[16px] tracking-[0.15px];
+  }
+
+  /* This is only for the innerhtml don't use directly in text */
+  b {
+    @apply font-poppins_medium text-textPrimary text-[14px] md:text-[16px];
+  }
+
+  body::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  h1 {
+    @apply font-poppins_bolder text-textPrimary text-[30px] leading-[40px] md:text-[40px] md:leading-[60px];
+  }
+
+  h2 {
+    @apply font-poppins_bold text-textPrimary text-[28px] leading-[38px] md:text-[38px]  md:leading-[58px];
+  }
+
+  //For all the heading we will use h3
+  h3 {
+    @apply font-poppins_bold text-textPrimary text-[24px] leading-[36px] md:text-[36px] md:leading-[51px];
+  }
+
+  h4 {
+    @apply font-poppins_medium text-textPrimary text-[18px] leading-[28px] md:text-[34px] md:leading-[48px];
+  }
+
+  h5 {
+    @apply font-poppins_medium text-textPrimary text-[16px] leading-[26px] md:text-[32px] md:leading-[46px];
+  }
+
+  h6 {
+    @apply font-poppins text-textPrimary text-[14px] leading-[22px] md:text-[30px];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply font-poppins_medium bg-primary-500 hover:bg-primary-600 focus:bg-primary-600 active:bg-primary-700 rounded-[8px] md:rounded-[16px] px-[48px] py-[12px] text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:-translate-y-1 hover:scale-110 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)];
+  }
+
+  .chip-active-primary {
+    @apply font-poppins_medium text-center bg-primary-500 hover:bg-primary-600 focus:bg-primary-600 active:bg-primary-700 rounded-[24px] p-[8px] md:px-[12px] md:py-[12px] text-[12px] md:text-[14px] text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)];
+  }
+
+  .chip-inactive {
+    @apply font-poppins text-textSecondary text-[12px] md:text-[14px] text-center p-[8px] md:px-[12px] md:py-[12px];
+  }
+
+  .sm-title {
+    @apply font-poppins_medium uppercase text-[12px] md:text-[14px] text-primary-500 leading-[12px] md:leading-[14px];
+  }
+
+  .counter-container {
+    @apply bg-white h-[40px] w-[40px] p-[2px] rounded-[8px] flex items-center justify-center shadow-[0px_60px_120px_-20px_#EBEFFD];
+  }
+
+  .service-card {
+    @apply cursor-pointer shadow-[0px_60px_120px_-20px_#EBEFFD] flex h-[200px] md:h-[300px] flex-col items-center justify-center rounded-[16px] bg-white py-[32px];
+  }
+
+  .input {
+    @apply bg-lightGray h-[40px] rounded-[8px] px-[8px] py-[10px];
+  }
+
+  .input-label {
+    @apply font-poppins font-[600] text-[12px] text-textPrimary mb-[4px];
+  }
+
+  .cv-download-btn {
+    @apply fixed top-[60%] right-0 z-50 rounded-l-[8px] overflow-hidden text-[12px] h-[80px] flex uppercase font-poppins font-[500] shadow-[8px_8px_24px_0px_rgba(74,74,74,0.20)];
+  }
+
+  .svg-zoom-out {
+    @apply hover:scale-110 hover:transition-transform duration-150 ease-in-out;
+  }
+
+  .header {
+    @apply transition duration-150 ease-in-out sticky top-0 z-10 bg-white/[0.75] backdrop-blur-[12px];
+  }
+
+  .slide-in-enter-active {
+    @apply transition-transform duration-300 ease-out;
+    transform: translateY(-100%); /* Slide in from top */
+  }
+  
+  .slide-in-enter-done {
+    transform: translateY(0);
+  }
+  
+  .slide-out-exit-active {
+    @apply transition-transform duration-300 ease-in;
+    transform: translateY(100%); /* Slide out to top */
+  }
+
+  .text-truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .cv-text-orientation{
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+  }
+
+  /* Button Icon shake animation */
+  .btn:hover {
+    background-color: rgb(56, 56, 56);
+  }
+  
+  .btn:hover .icon-shake {
+    animation: iconShake 0.9s both;
+  }
+  
+  /* bell ringing animation keyframes*/
+  @keyframes iconShake {
+    0%,
+    100% {
+      transform-origin: top;
+    }
+  
+    15% {
+      transform: rotateZ(10deg);
+    }
+  
+    30% {
+      transform: rotateZ(-10deg);
+    }
+  
+    45% {
+      transform: rotateZ(5deg);
+    }
+  
+    60% {
+      transform: rotateZ(-5deg);
+    }
+  
+    75% {
+      transform: rotateZ(2deg);
+    }
+  }
+  
+  /* contact us sumbit button animation */
+  .btn:active {
+    transform: scale(0.8);
+  }
+
+  .submit-btn span {
+    display: block;
+    margin-left: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .submit-btn svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .submit-btn:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+  
+  .submit-btn:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+  
+  .submit-btn:hover span {
+    transform: translateX(13em);
+    @media (min-width: 768px) {
+      transform: translateX(8em)
+    }
+  }
+  
+  .submit-btn:active {
+    transform: scale(0.95);
+  }
+  
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+  
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
+}

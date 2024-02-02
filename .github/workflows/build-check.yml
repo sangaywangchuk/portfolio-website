@@ -1,0 +1,44 @@
+name: Branch build check
+concurrency:
+  group: ${{ github.ref_name }}
+  cancel-in-progress: true
+on:
+  push:
+    # branches:
+    #   - 'development'
+
+  workflow_dispatch:
+
+jobs:
+  build-check:
+    name: On Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .node-version
+
+      # This step restores the cache of previously installed packages
+      - name: Restore Cache
+        id: 'yarn-cache'
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
+
+      # This step installs the dependencies if the cache was not hit
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Lint
+        run: yarn lint
